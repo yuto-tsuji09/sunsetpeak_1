@@ -1,0 +1,114 @@
+@use "sass:math";
+
+@use "../global" as *;
+
+.contact-form {
+  text-align: center;
+  margin-inline: auto;
+  max-width: 600px;
+  width: 100%;
+}
+
+.contact-form dt {
+  text-align-last: left;
+  margin-top: 32px;
+  font-size: 1.25rem;
+
+  &:nth-of-type(1) {
+    margin-top: 0;
+  }
+}
+
+.contact-form span {
+  color: $red;
+}
+
+.contact-form dd {
+  margin-top: 24px;
+  text-align: left;
+  width: 100%;
+  margin-inline: auto;
+}
+
+.contact_text {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact_text dd {
+  max-width: 300px;
+  margin-inline: 0;
+}
+
+.contact_text span {
+  margin-top: 24px;
+  font-size: 1.25rem;
+}
+
+select {
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select_wrapper {
+  position: relative;
+}
+
+.select_wrapper::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
+  border-right: 12px solid transparent;
+  border-left: 12px solid transparent;
+  border-top: 12px solid $red;
+  border-bottom: 0;
+}
+
+.contact-form select,
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  border: solid 1px $red;
+  border-radius: 10px;
+  padding: 10px;
+  color: $gray;
+}
+
+.button {
+  background-color: $red;
+  max-width: 250px;
+  width: 100%;
+  text-align: center;
+  border-radius: 50px;
+  margin-inline: auto;
+  margin-top: 80px;
+
+  &:hover {
+    opacity: 0.5;
+  }
+}
+
+.button input {
+  color: $white;
+  padding: 24px;
+  width: 100%;
+}
+
+@include mq("md") {
+  .contact-inner {
+    position: relative;
+  }
+
+  .contact_text span {
+    position: absolute;
+    top: 32px;
+    right: 16px;
+  }
+}
